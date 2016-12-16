@@ -1,0 +1,49 @@
+<head>
+	<script src="jquery-3.1.1.js"></script>
+	<script src="grabzit.min.js"></script>
+	<script src="Main.js"></script>
+	<script src="jquery.query-object.js"></script>
+</head>
+
+<body>
+<div id="letter">
+	My name is 
+	<div id="name" style="display: inline-block">
+		<script>
+		document.getElementById("name").innerHTML = $.query.get('name');
+		</script>
+	</div> 
+
+	and this is my letter for<div id="purpose" style="display: inline-block">
+		<div id="purpose1" style="display: inline-block">
+		<script>
+			if ($.query.get('purpose1').length > 0) {
+				document.getElementById("purpose1").innerHTML = "&nbsp" + $.query.get('purpose1');
+			}	
+		</script>
+		</div><div id="purpose2" style="display: inline-block">
+		<script>
+			if ($.query.get('purpose1').length == undefined && $.query.get('purpose2').length > 0) {
+				document.getElementById("purpose2").innerHTML = "&nbsp" + $.query.get('purpose2');
+			}
+			else if ($.query.get('purpose2').length > 0) {
+				document.getElementById("purpose2").innerHTML = "&nbspand " + $.query.get('purpose2');
+			}	
+		</script>
+		</div><div id="purpose3" style="display: inline-block">
+		<script>
+			if ($.query.get('purpose1').length == undefined && $.query.get('purpose2').length == undefined && $.query.get('purpose3').length > 0) {
+				document.getElementById("purpose3").innerHTML = "&nbsp" + $.query.get('purpose3');
+			}
+			else if ($.query.get('purpose3').length > 0) {
+				document.getElementById("purpose3").innerHTML = "&nbspand " + $.query.get('purpose3');
+			}	
+		</script>
+		</div>
+	</div> since it's really important.
+</div>
+</br>
+
+<button type="button" onclick="pdfCreate(document.getElementById('letter').innerHTML)">Print</button>
+
+</body>

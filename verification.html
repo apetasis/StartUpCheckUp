@@ -1,10 +1,68 @@
 <head>
 	<script src="jquery-3.1.1.js"></script>
-	<script src="Test.js"></script>
+	<script src="grabzit.min.js"></script>
+	<script src="Main.js"></script>
+	<script src="jquery.query-object.js"></script>
 </head>
 
 <body>
 
-<button type="button" onclick="testCall()">Test</button>
+<div id="Details">
+	Name: <div id="Name" style="display: inline-block"> 
+		<script>
+	    document.getElementById("Name").innerHTML = $.query.get('name');
+		</script>
+	</div></br>
+	Company Name: <div id="Company_Name" style="display: inline-block"> 
+		<script>
+	    document.getElementById("Company_Name").innerHTML = $.query.get('company_name');
+		</script>
+	</div></br>
+	Company Address: <div id="Company_Address" style="display: inline-block"> 
+		<script>
+	    document.getElementById("Company_Address").innerHTML = $.query.get('company_address');
+		</script>
+	</div></br>
+	Purposes: 
+	<div id="Purpose">
+		<div id="purpose1">
+			<script>
+		    if ($.query.get('purpose1')) {
+		    	document.getElementById("purpose1").innerHTML = "- " + $.query.get('purpose1');
+		    }
+			</script>
+		</div>
+		<div id="purpose2">
+			<script>
+		    if ($.query.get('purpose2')) {
+		    	document.getElementById("purpose2").innerHTML = "- " + $.query.get('purpose2');
+		    }
+			</script>
+		</div>
+		<div id="purpose3">
+			<script>
+		    if ($.query.get('purpose3')) {
+		    	document.getElementById("purpose3").innerHTML = "- " + $.query.get('purpose3');
+		    }
+			</script>
+		</div>
+	</div></br>
+
+</div>
+
+<form action="print.html" method="GET">
+	<input type="hidden" name='name' id="name_id" value="">
+	<input type="hidden" name="purpose1" id="purpose1_id" value="">
+	<input type="hidden" name="purpose2" id="purpose2_id" value="">
+	<input type="hidden" name="purpose3" id="purpose3_id" value="">
+	<input type="submit">
+</form>
+
+<script>
+document.getElementById("name_id").value = $.query.get('name');
+document.getElementById("purpose1_id").value = $.query.get('purpose1');
+document.getElementById("purpose2_id").value = $.query.get('purpose2');
+document.getElementById("purpose3_id").value = $.query.get('purpose3');
+</script>
 
 </body>
