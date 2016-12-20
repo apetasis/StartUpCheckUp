@@ -4,7 +4,7 @@ function pdfCreate(x) {
 
 function validateForm() {
 	
-	if ($.get("administrative_area") !== "Delaware" || $.get("administrative_area") !== "DE" ) {
+	if ($.get("administrative_area") !== "Delaware" && $.get("administrative_area") !== "DE" ) {
 		alert("Needs to be a Delaware address");
 		return false;
 	}
