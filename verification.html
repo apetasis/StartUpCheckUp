@@ -18,9 +18,29 @@
 	    document.getElementById("Company_Name").innerHTML = $.query.get('company_name');
 		</script>
 	</div></br>
-	Company Address: <div id="Company_Address" style="display: inline-block"> 
+	Company Address</br>
+	Street:
+	<div id="street-address" style="display: inline-block">
 		<script>
-	    document.getElementById("Company_Address").innerHTML = $.query.get('company_address');
+	    document.getElementById("street-address").innerHTML = $.query.get('street-address');
+		</script>
+	</div></br>
+	City:
+	<div id="city" style="display: inline-block">
+		<script>
+	    document.getElementById("city").innerHTML = $.query.get('city');
+		</script>
+	</div></br>
+	State:
+	<div id="state" style="display: inline-block">
+		<script>
+	    document.getElementById("state").innerHTML = $.query.get('state');
+		</script>
+	</div></br>
+	Zip Code:
+	<div id="zip" style="display: inline-block">
+		<script>
+	    document.getElementById("zip").innerHTML = $.query.get('zip');
 		</script>
 	</div></br>
 	Purposes: 

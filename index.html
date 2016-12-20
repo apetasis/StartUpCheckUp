@@ -2,14 +2,37 @@
 	<script src="jquery-3.1.1.js"></script>
 	<script src="Main.js"></script>
 	<script src="jquery.liveaddress.min.js"></script>
-	<script>$.LiveAddress({key: "30665467233688813", addresses: [{id: "company_address", freeform: '#entireAddress', country:'#country'}]});</script>
+	<script>$.LiveAddress({
+			key: "30665467233688813", 
+			target: "US",
+			autocomplete: 5,
+			autoVerify: false,
+			addresses: [{
+				id: "company_address", 
+				address1: "#street-address",
+				locality: "#city",
+				administartive_area: "#state",
+				postal_code: "#zip",
+				country:'#country'}]
+			});
+	</script>
 </head>
 <body>
 
 <form name="letter_info" action="verification.html" method="GET" onsubmit="return validateCheckBoxes(this)">
-	Name: <input type="text" name="name" required><br>
-	Company Name: <input type="text" name="company_name" required><br>
-	Company Address: <input type="text" name="company_address" required id="entireAddress"><br>
+	<label>Name:</label>
+	<input type="text" name="name" required><br>
+	<label>Company Name:</label>
+	<input type="text" name="company_name" required><br><br> 
+	Company Address<br>
+	<label>Street:</label><br>
+	<input type="text" id="street-address" name="street-address" class="form-control"><br>
+	<label>City:</label><br>
+	<input type="text" id="city" name="city" class="form-control"><br>
+	<label>State:</label><br>
+	<input type="text" id="state" name="state" class="form-control"><br>
+	<label>Zip Code:</label><br>
+	<input type="text" id="zip" name="zip" class="form-control"><br><br>
 	Choose Purpose: <div id="no_purpose" style="display: inline-block"></div> <br>
 	<input type="checkbox" name="purpose1" value="purpose 1">Purpose 1<br>
 					<input type="checkbox" name="purpose2" value="purpose 2">Purpose 2<br>
