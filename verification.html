@@ -20,9 +20,14 @@
 	</div></br>
 	Company Address</br>
 	Street:
-	<div id="street-address" style="display: inline-block">
+	<div id="street" style="display: inline-block">
 		<script>
-	    document.getElementById("street-address").innerHTML = $.query.get('street-address');
+	    document.getElementById("street").innerHTML = $.query.get('street');
+		</script>
+	</div></br>
+	<div id="secondary" style="display: inline-block">
+		<script>
+	    document.getElementById("secondary").innerHTML = $.query.get('secondary');
 		</script>
 	</div></br>
 	City:

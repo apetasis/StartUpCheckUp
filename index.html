@@ -9,7 +9,8 @@
 			autoVerify: false,
 			addresses: [{
 				id: "company_address", 
-				address1: "#street-address",
+				street: "#street",
+				secondary: "#secondary"
 				locality: "#city",
 				administartive_area: "#state",
 				postal_code: "#zip",
@@ -26,7 +27,8 @@
 	<input type="text" name="company_name" required><br><br> 
 	Company Address<br>
 	<label>Street:</label><br>
-	<input type="text" id="street-address" name="street-address" class="form-control"><br>
+	<input type="text" id="street" name="street" class="form-control"><br>
+	<input type="text" id="secondary" name="secondary" class="form-control"><br>
 	<label>City:</label><br>
 	<input type="text" id="city" name="city" class="form-control"><br>
 	<label>State:</label><br>
