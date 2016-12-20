@@ -1,12 +1,13 @@
 <head>
 	<script src="jquery-3.1.1.js"></script>
 	<script src="Main.js"></script>
-	<script src="jquery.liveaddress.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="http://d79i1fxsrar4t.cloudfront.net/jquery.liveaddress/3.2/jquery.liveaddress.min.js"></script>
 	<script>var liveaddress = $.LiveAddress({
 			key: "30665467233688813", 
 			target: "US",
 			debug: true,
-			autocomplete: 0,
+			autocomplete: 5,
 			autoVerify: false,
 			submitVerify: true,
 			missingInputeMessage: "Add the address",
@@ -31,14 +32,16 @@
 	<input type="text" name="company_name" required><br><br> 
 	Company Address<br>
 	<label>Street:</label><br>
-	<input type="text" id="street" name="street" class="form-control"><br>
+	<input type="text" id="street" name="street" class="form-control" required><br>
 	<input type="text" id="secondary" name="secondary" class="form-control"><br>
 	<label>City:</label><br>
-	<input type="text" id="city" name="city" class="form-control"><br>
+	<input type="text" id="city" name="city" class="form-control" required><br>
 	<label>State:</label><br>
-	<input type="text" id="state" name="state" class="form-control"><br>
+	<input type="text" id="state" name="state" class="form-control" required><br>
+	<label>Country:</label><br>
+	<input type="text" id="country" name="country" class="form-control" required><br>
 	<label>Zip Code:</label><br>
-	<input type="text" id="zip" name="zip" class="form-control"><br><br>
+	<input type="text" id="zip" name="zip" class="form-control" required><br><br>
 	Choose Purpose: <div id="no_purpose" style="display: inline-block"></div> <br>
 	<input type="checkbox" name="purpose1" value="purpose 1">Purpose 1<br>
 					<input type="checkbox" name="purpose2" value="purpose 2">Purpose 2<br>

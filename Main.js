@@ -4,11 +4,11 @@ function pdfCreate(x) {
 
 function validateForm() {
 	var x = document.forms["letter_info"]["state"].value;
-	if (x != "Delaware" && x != "DE" ) {
+	/*if (x != "Delaware" && x != "DE" ) {
 		console.log(x);
 		alert("Needs to be a Delaware address");
 		return false;
-	}
+	}*/
 	if(letter_info.purpose1.checked == false && letter_info.purpose2.checked == false && letter_info.purpose3.checked == false) {
 		document.getElementById("no_purpose").innerHTML = "Please check one of the purpose boxes";
 		return false;
