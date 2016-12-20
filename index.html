@@ -1,13 +1,15 @@
 <head>
 	<script src="jquery-3.1.1.js"></script>
 	<script src="Main.js"></script>
+	<script src="jquery.liveaddress.min.js"></script>
+	<script>$.LiveAddress({key: "30665467233688813", addresses: [{id: "company_address", freeform: '#entireAddress', country:'#country'}]});</script>
 </head>
 <body>
 
 <form name="letter_info" action="verification.html" method="GET" onsubmit="return validateCheckBoxes(this)">
 	Name: <input type="text" name="name" required><br>
 	Company Name: <input type="text" name="company_name" required><br>
-	Company Address: <input type="text" name="company_address" required><br>
+	Company Address: <input type="text" name="company_address" required id="entireAddress"><br>
 	Choose Purpose: <div id="no_purpose" style="display: inline-block"></div> <br>
 	<input type="checkbox" name="purpose1" value="purpose 1">Purpose 1<br>
 					<input type="checkbox" name="purpose2" value="purpose 2">Purpose 2<br>
