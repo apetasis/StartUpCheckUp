@@ -4,13 +4,10 @@ function pdfCreate(x) {
 
 function validateForm() {
 	
-	if ($.get("administrative_area") !== "Delaware" && $.get("administrative_area") !== "DE" ) {
+	if ($.get("administrative_area") == "Delaware" && $.get("administrative_area") == "DE" ) {
+		console.log($.get("administrative_area"));
 		alert("Needs to be a Delaware address");
 		return false;
-	}
-
-	else {
-		return true;
 	}
 	if(letter_info.purpose1.checked == false && letter_info.purpose2.checked == false && letter_info.purpose3.checked == false) {
 		document.getElementById("no_purpose").innerHTML = "Please check one of the purpose boxes";
