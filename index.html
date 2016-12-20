@@ -2,28 +2,32 @@
 	<script src="jquery-3.1.1.js"></script>
 	<script src="Main.js"></script>
 	<script src="jquery.liveaddress.min.js"></script>
-	<script>$.LiveAddress({
+	<script>var liveaddress = $.LiveAddress({
 			key: "30665467233688813", 
 			target: "US",
+			debug: true,
 			autocomplete: 5,
 			autoVerify: false,
+			submitVerify: true,
+			missingInputeMessage: "Add the address",
 			addresses: [{
 				id: "company_address", 
-				street: "#street",
-				secondary: "#secondary",
+				address1: "#street",
+				address2: "#secondary",
 				locality: "#city",
-				administartive_area: "#state",
+				administrative_area: "#state",
 				postal_code: "#zip",
-				country:'#country'}]
-			});
+				country:'#country'
+			}]
+		});
 	</script>
 </head>
 <body>
 
-<form name="letter_info" action="verification.html" method="GET" onsubmit="return validateCheckBoxes(this)">
-	<label>Name:</label>
+<form name="letter_info" action="verification.html" method="GET" onsubmit="return validateForm(this)">
+	<label>Name:</label><br>
 	<input type="text" name="name" required><br>
-	<label>Company Name:</label>
+	<label>Company Name:</label><br>
 	<input type="text" name="company_name" required><br><br> 
 	Company Address<br>
 	<label>Street:</label><br>
