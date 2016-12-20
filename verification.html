@@ -1,4 +1,5 @@
 <head>
+	<link rel="stylesheet" href="styles.css">
 	<script src="jquery-3.1.1.js"></script>
 	<script src="grabzit.min.js"></script>
 	<script src="Main.js"></script>
@@ -6,55 +7,58 @@
 </head>
 
 <body>
-
+<div id="main_page" class="box">
+<h1>The Start-Up Check Up</h1>
+<h4>DISCLAIMER</h4>
+<p>We are not liable for whatever happens to you.</p>
 <div id="Details">
-	Name: <div id="Name" style="display: inline-block"> 
+	<label>Name:</label> <div id="Name" style="display: inline-block"> 
 		<script>
 	    document.getElementById("Name").innerHTML = $.query.get('name');
 		</script>
 	</div></br>
-	Company Name: <div id="Company_Name" style="display: inline-block"> 
+	<label>Company Name:</label> <div id="Company_Name"  style="display: inline-block"> 
 		<script>
 	    document.getElementById("Company_Name").innerHTML = $.query.get('company_name');
 		</script>
-	</div></br>
-	Company Address</br>
-	Street:
+	</div><br>
+	<label>Street:</label>
 	<div id="street" style="display: inline-block">
 		<script>
 	    document.getElementById("street").innerHTML = $.query.get('street');
 		</script>
 	</div></br>
+	<label>Street 2:</label>
 	<div id="secondary" style="display: inline-block">
 		<script>
 	    document.getElementById("secondary").innerHTML = $.query.get('secondary');
 		</script>
 	</div></br>
-	City:
+	<label>City:</label>
 	<div id="city" style="display: inline-block">
 		<script>
 	    document.getElementById("city").innerHTML = $.query.get('city');
 		</script>
 	</div></br>
-	State:
+	<label>State:</label>
 	<div id="state" style="display: inline-block">
 		<script>
 	    document.getElementById("state").innerHTML = $.query.get('state');
 		</script>
 	</div></br>
-	Country:
+	<label>Country:</label>
 	<div id="country" style="display: inline-block">
 		<script>
 	    document.getElementById("country").innerHTML = $.query.get('country');
 		</script>
 	</div></br>
-	Zip Code:
+	<label>Zip Code:</label>
 	<div id="zip" style="display: inline-block">
 		<script>
 	    document.getElementById("zip").innerHTML = $.query.get('zip');
 		</script>
 	</div></br>
-	Purposes: 
+	<label>Purposes:</label>
 	<div id="Purpose">
 		<div id="purpose1">
 			<script>
@@ -80,7 +84,6 @@
 	</div></br>
 
 </div>
-
 <form action="print.html" method="GET">
 	<input type="hidden" name='name' id="name_id" value="">
 	<input type="hidden" name="purpose1" id="purpose1_id" value="">
@@ -88,7 +91,7 @@
 	<input type="hidden" name="purpose3" id="purpose3_id" value="">
 	<input type="submit">
 </form>
-
+</div>
 <script>
 document.getElementById("name_id").value = $.query.get('name');
 document.getElementById("purpose1_id").value = $.query.get('purpose1');

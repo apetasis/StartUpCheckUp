@@ -1,8 +1,9 @@
 <head>
+	<link rel="stylesheet" href="styles.css">
 	<script src="jquery-3.1.1.js"></script>
 	<script src="Main.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="//d79i1fxsrar4t.cloudfront.net/jquery.liveaddress/3.2/jquery.liveaddress.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//d79i1fxsrar4t.cloudfront.net/jquery.liveaddress/3.2/jquery.liveaddress.min.js"></script>
 	<script>var liveaddress = $.LiveAddress({
 			key: "30665467233688813", 
 			target: "US",
@@ -25,22 +26,28 @@
 </head>
 <body>
 
-<form name="letter_info" action="verification.html" method="GET" onsubmit="return validateForm(this)">
-	<label>Name:</label><br>
-	<input type="text" name="name" required><br>
-	<label>Company Name:</label><br>
-	<input type="text" name="company_name" required><br><br> 
-	Company Address<br>
-	<label>Street:</label><br>
+<div id="main_page" class="box">
+<h1>The Start-Up Check Up</h1>
+<h4>DISCLAIMER</h4>
+<p>We are not liable for whatever happens to you.</p>
+<p>Please provide the information below to generate your letter.</p>
+<form class="user-form" name="letter_info" action="verification.html" method="GET" onsubmit="return validateForm(this)">
+	<label>Name:</label>
+	<input class="field" type="text" name="name" required><br>
+	<label>Company Name:</label>
+	<input class="field"type="text" name="company_name" required><br><br> 
+	<h5>Company Address</h5>
+	<label>Street:</label>
 	<input type="text" id="street" name="street" class="form-control" required><br>
+	<label>Street 2:</label>
 	<input type="text" id="secondary" name="secondary" class="form-control"><br>
-	<label>City:</label><br>
+	<label>City:</label>
 	<input type="text" id="city" name="city" class="form-control" required><br>
-	<label>State:</label><br>
+	<label>State:</label>
 	<input type="text" id="state" name="state" class="form-control" required><br>
-	<label>Country:</label><br>
+	<label>Country:</label>
 	<input type="text" id="country" name="country" class="form-control" required><br>
-	<label>Zip Code:</label><br>
+	<label>Zip Code:</label>
 	<input type="text" id="zip" name="zip" class="form-control" required><br><br>
 	Choose Purpose: <div id="no_purpose" style="display: inline-block"></div> <br>
 	<input type="checkbox" name="purpose1" value="purpose 1">Purpose 1<br>
@@ -48,6 +55,6 @@
 					<input type="checkbox" name="purpose3" value="purpose 3">Purpose 3<br>
 	<input type="submit">
 </form>
-
+</div>
 
 </body>
