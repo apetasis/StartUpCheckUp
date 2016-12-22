@@ -2,8 +2,12 @@
 	<link rel="stylesheet" href="styles.css">
 	<script src="jquery-3.1.1.js"></script>
 	<script src="grabzit.min.js"></script>
-	<script src="Main.js"></script>
 	<script src="jquery.query-object.js"></script>
+	<script>
+	function pdfCreate(x) {
+    GrabzIt("YWFmNTY4Yjc1NjNmNGY0YThmNjc5N2Q2NTFlOTFlNTg=").ConvertHTML(x, {"format": "pdf", "background": 0}).Create();
+}
+	</script>
 </head>
 
 <body>
@@ -27,7 +31,14 @@
 	<br>
 	<br>
 	<div style="padding-left: 10px">To Whom It May Concern:</div>
-	<p style="display: inline-block; padding-left: 10px">The undersigned,&nbsp<div id="name" style="display: inline-block"><script>document.getElementById("name").innerHTML = $.query.get('name');</script></div>, holds  <div id="shares" style="display: inline-block"><script>document.getElementById("shares").innerHTML = $.query.get('shares');</script></div> shares in <div id="company_name" style="display: inline-block"><script>document.getElementById("company_name").innerHTML = $.query.get('company_name');</script></div> and formally requests the corporation's books and records.</p><p style="padding-left: 10px; margin-top: -20px">Here are the following reasons for the request:
+	<p id="intro" style="display: inline-block; padding-left: 10px"></p>
+	<script>
+		var name = $.query.get('name');
+		var shares = $.query.get('shares');
+		var company_name = $.query.get('company_name');
+		document.getElementById("intro").innerHTML = "The undersigned, " + name + ", holds " + shares + " in " + company_name + " and formally requests the corporation's books and records."
+	</script>
+	<p style="padding-left: 10px; margin-top: 0px">Here are the following reasons for the request:
 	<ul>
 		<div id="purpose">
 		<div id="purpose1" style="display: inline-block">
