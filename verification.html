@@ -10,7 +10,7 @@
 <div id="main_page" class="box">
 <h1>The Start-Up Check Up</h1>
 <h4>DISCLAIMER</h4>
-<p>We are not liable for whatever happens to you.</p>
+<p class="disclaimer">We are not liable for whatever happens to you.</p>
 <div id="Details">
 	<label>Name:</label> <div id="Name" style="display: inline-block"> 
 		<script>
@@ -22,16 +22,23 @@
 	    document.getElementById("Company_Name").innerHTML = $.query.get('company_name');
 		</script>
 	</div><br>
+	<label>Number of Shares You Own:</label> <div id="Number_of_Shares"  style="display: inline-block"> 
+		<script>
+	    document.getElementById("Number_of_Shares").innerHTML = $.query.get('shares');
+		</script>
+	</div><br>
+	<h5>Company Address</h5>
 	<label>Street:</label>
 	<div id="street" style="display: inline-block">
 		<script>
 	    document.getElementById("street").innerHTML = $.query.get('street');
 		</script>
 	</div></br>
-	<label>Street 2:</label>
 	<div id="secondary" style="display: inline-block">
 		<script>
-	    document.getElementById("secondary").innerHTML = $.query.get('secondary');
+	    if ($.query.get('secondary') !== true ) {
+	    document.getElementById("secondary").innerHTML = "<label>Street 2:</label> " + $.query.get('secondary');
+	}
 		</script>
 	</div></br>
 	<label>City:</label>
@@ -57,35 +64,45 @@
 		<script>
 	    document.getElementById("zip").innerHTML = $.query.get('zip');
 		</script>
-	</div></br>
+	</div></br></br>
 	<label>Purposes:</label>
 	<div id="Purpose">
+		<ul>
 		<div id="purpose1">
 			<script>
 		    if ($.query.get('purpose1')) {
-		    	document.getElementById("purpose1").innerHTML = "- " + $.query.get('purpose1');
+		    	document.getElementById("purpose1").innerHTML = "<li>" + $.query.get('purpose1') + "</li>";
 		    }
 			</script>
 		</div>
 		<div id="purpose2">
 			<script>
 		    if ($.query.get('purpose2')) {
-		    	document.getElementById("purpose2").innerHTML = "- " + $.query.get('purpose2');
+		    	document.getElementById("purpose2").innerHTML = "<li>"  + $.query.get('purpose2') + "</li>";
 		    }
 			</script>
 		</div>
 		<div id="purpose3">
 			<script>
 		    if ($.query.get('purpose3')) {
-		    	document.getElementById("purpose3").innerHTML = "- " + $.query.get('purpose3');
+		    	document.getElementById("purpose3").innerHTML = "<li>" + $.query.get('purpose3') + "</li>";
 		    }
 			</script>
 		</div>
+	</ul>
 	</div></br>
 
 </div>
 <form action="print.html" method="GET">
 	<input type="hidden" name='name' id="name_id" value="">
+	<input type="hidden" name='company_name' id="company_name_id" value="">
+	<input type="hidden" name='shares' id="shares_id" value="">
+	<input type="hidden" name='street' id="street_id" value="">
+	<input type="hidden" name='secondary' id="secondary_id" value="">
+	<input type="hidden" name='city' id="city_id" value="">
+	<input type="hidden" name='state' id="state_id" value="">
+	<input type="hidden" name='country' id="country_id" value="">
+	<input type="hidden" name='zip' id="zip_id" value="">
 	<input type="hidden" name="purpose1" id="purpose1_id" value="">
 	<input type="hidden" name="purpose2" id="purpose2_id" value="">
 	<input type="hidden" name="purpose3" id="purpose3_id" value="">
@@ -94,6 +111,14 @@
 </div>
 <script>
 document.getElementById("name_id").value = $.query.get('name');
+document.getElementById("company_name_id").value = $.query.get('company_name');
+document.getElementById("shares_id").value = $.query.get('shares');
+document.getElementById("street_id").value = $.query.get('street');
+document.getElementById("secondary_id").value = $.query.get('secondary');
+document.getElementById("city_id").value = $.query.get('city');
+document.getElementById("state_id").value = $.query.get('state');
+document.getElementById("country_id").value = $.query.get('country');
+document.getElementById("zip_id").value = $.query.get('zip');
 document.getElementById("purpose1_id").value = $.query.get('purpose1');
 document.getElementById("purpose2_id").value = $.query.get('purpose2');
 document.getElementById("purpose3_id").value = $.query.get('purpose3');

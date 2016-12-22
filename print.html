@@ -1,4 +1,5 @@
 <head>
+	<link rel="stylesheet" href="styles.css">
 	<script src="jquery-3.1.1.js"></script>
 	<script src="grabzit.min.js"></script>
 	<script src="Main.js"></script>
@@ -6,44 +7,59 @@
 </head>
 
 <body>
-<div id="letter">
-	My name is 
-	<div id="name" style="display: inline-block">
-		<script>
-		document.getElementById("name").innerHTML = $.query.get('name');
-		</script>
-	</div> 
-
-	and this is my letter for<div id="purpose" style="display: inline-block">
+<div id="main_page" class="box">
+<h1>The Start-Up Check Up</h1>
+<h4>DISCLAIMER</h4>
+<p class="disclaimer">We are not liable for whatever happens to you.</p>
+<p style="padding-left: 10px">See your letter below and print it as a PDF!</p>
+</div><br>
+<div id="letter" class="box">
+	<h2 style="text-align: center">Demand for Inspection of Corporate Books and Records</h2>
+	<br>
+		<div id="address_company_name" style="padding-left: 10px"><script>document.getElementById("address_company_name").innerHTML = $.query.get('company_name');</script></div>
+		<div id="street" style="padding-left: 10px"><script>document.getElementById("street").innerHTML = $.query.get('street');</script></div>
+		<div id="secondary" style="padding-left: 10px"><script>if ($.query.get('secondary') !== "true"){document.getElementById("secondary").innerHTML = $.query.get('secondary');}</script></div>
+		<div id="city" style="display: inline-block; padding-left: 10px"><script>document.getElementById("city").innerHTML = $.query.get('city');</script></div>, 
+		<div id="state" style="display: inline-block"><script>document.getElementById("state").innerHTML = $.query.get('state');</script></div>
+		<!--<div id="country"><script>document.getElementById("country").innerHTML = $.query.get('country');</script></div> -->
+		<div id="zip" style="display: inline-block"><script>document.getElementById("zip").innerHTML = $.query.get('zip');</script></div>
+	<br>
+	<br>
+	<br>
+	<div style="padding-left: 10px">To Whom It May Concern:</div>
+	<p style="display: inline-block; padding-left: 10px">The undersigned,&nbsp<div id="name" style="display: inline-block"><script>document.getElementById("name").innerHTML = $.query.get('name');</script></div>, holds  <div id="shares" style="display: inline-block"><script>document.getElementById("shares").innerHTML = $.query.get('shares');</script></div> shares in <div id="company_name" style="display: inline-block"><script>document.getElementById("company_name").innerHTML = $.query.get('company_name');</script></div> and formally requests the corporation's books and records.</p><p style="padding-left: 10px; margin-top: -20px">Here are the following reasons for the request:
+	<ul>
+		<div id="purpose">
 		<div id="purpose1" style="display: inline-block">
 		<script>
 			if ($.query.get('purpose1').length > 0) {
-				document.getElementById("purpose1").innerHTML = "&nbsp" + $.query.get('purpose1');
+				document.getElementById("purpose1").innerHTML = "<li> " + $.query.get('purpose1') +"</li>";
 			}	
 		</script>
-		</div><div id="purpose2" style="display: inline-block">
+		</div><br>
+		<div id="purpose2" style="display: inline-block">
 		<script>
-			if ($.query.get('purpose1').length == undefined && $.query.get('purpose2').length > 0) {
-				document.getElementById("purpose2").innerHTML = "&nbsp" + $.query.get('purpose2');
-			}
-			else if ($.query.get('purpose2').length > 0) {
-				document.getElementById("purpose2").innerHTML = "&nbspand " + $.query.get('purpose2');
+			if ($.query.get('purpose2').length > 0) {
+				document.getElementById("purpose2").innerHTML = "<li> " + $.query.get('purpose2') + "</li>";
 			}	
 		</script>
-		</div><div id="purpose3" style="display: inline-block">
+		</div><br>
+		<div id="purpose3" style="display: inline-block">
 		<script>
-			if ($.query.get('purpose1').length == undefined && $.query.get('purpose2').length == undefined && $.query.get('purpose3').length > 0) {
-				document.getElementById("purpose3").innerHTML = "&nbsp" + $.query.get('purpose3');
+			if ($.query.get('purpose3').length > 0) {
+				document.getElementById("purpose3").innerHTML = "<li> " + $.query.get('purpose3') + "</li>";
 			}
-			else if ($.query.get('purpose3').length > 0) {
-				document.getElementById("purpose3").innerHTML = "&nbspand " + $.query.get('purpose3');
-			}	
-		</script>
-		</div>
-	</div> since it's really important.
-</div>
-</br>
+		</script></div>
+	</div>
+	</ul>
+	</p>
+	<p style="padding-left: 10px"> The undersigned also states that he has never sold nor offered for sale any list of shareholders of any corporation, nor assisted any person in obtaining such list or record for such purposes.</p>
+	<br>
+	<p align="left" style="padding-left: 10px; margin-top: -20px">Please let him know when the request will be made available.</p><br>
+	<p align="left" style="padding-left: 10px; margin-top: -10px">Signed,</p>
 
+</br>
+</div>
 <button type="button" onclick="pdfCreate(document.getElementById('letter').innerHTML)">Print</button>
 
 </body>

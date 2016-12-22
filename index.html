@@ -29,13 +29,18 @@
 <div id="main_page" class="box">
 <h1>The Start-Up Check Up</h1>
 <h4>DISCLAIMER</h4>
-<p>We are not liable for whatever happens to you.</p>
+<p class="disclaimer">We are not liable for whatever happens to you.</p>
 <p>Please provide the information below to generate your letter.</p>
 <form class="user-form" name="letter_info" action="verification.html" method="GET" onsubmit="return validateForm(this)">
 	<label>Name:</label>
 	<input class="field" type="text" name="name" required><br>
 	<label>Company Name:</label>
-	<input class="field"type="text" name="company_name" required><br><br> 
+	<input class="field" type="text" name="company_name" required><br>
+	<label>Number of Shares You Own:</label>
+	<input class="field" type="text" name="shares" id="shares" required onkeyup="this.value=this.value.replace(/[^\d]/,'')"><br>
+	<br> 
+	Do You Have An Attorney?
+	<div class="checkboxes"><label class="checkbox-label"><input type="checkbox" name="attorney" id="attorney_check">Yes</label></div><br>
 	<h5>Company Address</h5>
 	<label>Street:</label>
 	<input type="text" id="street" name="street" class="form-control" required><br>
@@ -49,10 +54,12 @@
 	<input type="text" id="country" name="country" class="form-control" required><br>
 	<label>Zip Code:</label>
 	<input type="text" id="zip" name="zip" class="form-control" required><br><br>
-	Choose Purpose: <div id="no_purpose" style="display: inline-block"></div> <br>
-	<input type="checkbox" name="purpose1" value="purpose 1">Purpose 1<br>
-					<input type="checkbox" name="purpose2" value="purpose 2">Purpose 2<br>
-					<input type="checkbox" name="purpose3" value="purpose 3">Purpose 3<br>
+	Choose Purpose: <div id="no_purpose" style="display: inline-block"></div><br>
+	<div class="checkboxes">
+	<label><input type="checkbox" name="purpose1" value="The undersigned wants to check the financial health of the company." class="purpose"><span>To check financial health</span></label>
+	<label><input type="checkbox" name="purpose2" value="The undersigned wants to check for mismanagement of the company." class="purpose"><span>Find mismanagement</span></label>
+	<label><input type="checkbox" name="purpose3" value="The undersigned wants to check the value of his shares." class="purpose"><span>Check Value</span></label>
+	</div>
 	<input type="submit">
 </form>
 </div>
