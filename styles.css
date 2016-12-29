@@ -20,6 +20,20 @@ label {
 	text-align: right;
 }
 
+#back_button {
+	text-align: inline-block;
+}
+
+#buttons {
+	position: absolute;
+	width: 500px;
+	height: 20px;
+	bottom: 0px;
+}
+
+#main_page {
+	position: relative;
+}
 
 #form {
 	text-align: center;
@@ -46,6 +60,7 @@ label {
 .box {
 	border: 1px solid black;
 	background-color: white;
+	position: relative;
 }
 
 .user-form {
