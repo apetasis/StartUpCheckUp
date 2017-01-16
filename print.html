@@ -5,7 +5,7 @@
 	<script src="jquery.query-object.js"></script>
 	<script>
 	function pdfCreate(x) {
-    GrabzIt("YWFmNTY4Yjc1NjNmNGY0YThmNjc5N2Q2NTFlOTFlNTg=").ConvertHTML(x, {"format": "pdf", "background": 0}).Create();
+    GrabzIt("YWFmNTY4Yjc1NjNmNGY0YThmNjc5N2Q2NTFlOTFlNTg=").ConvertHTML(x, {"format": "pdf", "background": 0,"download": 1, "filename":$.query.get('name') + "_Letter.pdf"}).Create();
 }
 	</script>
 </head>
